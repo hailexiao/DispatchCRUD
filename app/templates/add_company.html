@@ -10,7 +10,7 @@
         {% if add_company %}
         <form class="form" role="form" action="{{ url_for('main.add_company') }}" method="post">
         {% else %}
-        <form class="form" role="form" action="{{ url_for('main.edit_company') }}" method="put">
+        <form class="form" role="form" action="{{ url_for('main.edit_company', id=company.id) }}" method="post">
         {% endif %}
             <div class="form-group">
             {{form.name.label}}

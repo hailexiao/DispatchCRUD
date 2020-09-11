@@ -76,21 +76,20 @@ def add_company():
                 flash('Unable to add company!', 'danger')
     return render_template(
         'add_company.html',
-        method="post",
         add_company=True,
         title="Add Company",
         form=form
         )
 
-@main_blueprint.route('/company/<int:id>', methods=['GET', 'PUT'])
+@main_blueprint.route('/company/<int:id>/edit', methods=['GET', 'POST'])
 @login_required
 def edit_company(id):
     company = Company.query.get_or_404(id)
     form = CompanyForm(obj=company)
+    print(f"id: {id}")
     if request.method == 'GET':
         return render_template(
             'add_company.html',
-            method="put",
             add_company=False,
             company=company,
             form=form,
