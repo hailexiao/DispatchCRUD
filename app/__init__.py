@@ -3,6 +3,7 @@ import os
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_migrate import Migrate
 from werkzeug.exceptions import HTTPException
 
 # instantiate extensions
@@ -41,6 +42,9 @@ def create_app(environment='development'):
     login_manager.login_view = 'auth.login'
     login_manager.login_message_category = 'info'
     login_manager.anonymous_user = AnonymousUser
+
+    # Set up migrator
+    migrate = Migrate(app, db)
 
     # Error handlers.
     @app.errorhandler(HTTPException)

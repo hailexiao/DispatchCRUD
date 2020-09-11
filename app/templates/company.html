@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mb-4">
+    <a href="{{ url_for('main.index') }}">&lt; Back to Companies List</a>
+    <h1 class="mb-4">{{ company.name }}</h1>
+    <div class="row justify-content-around">
+        <div class="col-4">
+            <strong>Industry:</strong>
+        </div>
+        <div class="col-6">
+            {{ company.industry }}
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col-4">
+            <strong>Industry:</strong>
+        </div>
+        <div class="col-6">
+            {{ company.industry }}
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col-4">
+            <strong>City:</strong>
+        </div>
+        <div class="col-6">
+            {{ company.city }}
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col-4">
+            <strong>State:</strong>
+        </div>
+        <div class="col-6">
+            {{ company.state }}
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col-4">
+            <strong>Country:</strong>
+        </div>
+        <div class="col-6">
+            {{ company.country }}
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col-4">
+            <strong>Phone #:</strong>
+        </div>
+        <div class="col-6">
+            {{ company.phone }}
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col-4">
+            <strong>Revenue (USD):</strong>
+        </div>
+        <div class="col-6">
+            {{ company.revenue }}
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col-4">
+            <strong>Notes:</strong>
+        </div>
+        <div class="col-6">
+            {{ company.notes }}
+        </div>
+    </div>
+</div>
+{% endblock %}

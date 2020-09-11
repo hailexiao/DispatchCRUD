@@ -1,6 +1,11 @@
 # ignore directories
 __pycache__/
 env/
+lib/
+lib64/
+share/
+.vscode/
+bin/
 
 # ignore files
 .env

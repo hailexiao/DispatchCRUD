@@ -2,3 +2,49 @@
 * {
     border-radius: 0 !important;
 }
+
+.container > h1 {
+    text-align: center;
+}
+
+.row > .btn {
+    text-align: center;
+}
+
+.row > a:first-of-type {
+    margin-right: 12px;
+}
+
+.row > a:not(:first-of-type):not(:last-of-type) {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.row > a:last-of-type {
+    margin-left: 12px;
+}
+
+.mt-6 {
+    margin-top: 60px;
+}
+
+.mb-4 {
+    margin-bottom: 40px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+display: flex;
+flex-direction: column;
+}
+
+.container {
+flex: 1 0 auto;
+}
+
+.footer {
+flex-shrink: 0;
+}

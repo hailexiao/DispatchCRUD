@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-4">
+  <div class="card w-50 mx-auto">
+    <div class="card-header">
+      <h4 class="card-title">{{ title }}</h4>
+    </div>
+    <div class="card-body">
+        {% if add_company %}
+        <form class="form" role="form" action="{{ url_for('main.add_company') }}" method="post">
+        {% else %}
+        <form class="form" role="form" action="{{ url_for('main.edit_company') }}" method="put">
+        {% endif %}
+            <div class="form-group">
+            {{form.name.label}}
+            {{form.name(class='form-control')}}
+            {% for error in form.errors.name %}
+            <small class="text-danger">{{error}}</small>
+            {% endfor %}
+            </div>
+            <div class="form-group">
+            {{form.industry.label}}
+            {{form.industry(class='form-control')}}
+            {% for error in form.errors.industry %}
+            <small class="text-danger">{{error}}</small>
+            {% endfor %}
+            </div>
+            <div class="form-group">
+            {{form.city.label}}
+            {{form.city(class='form-control')}}
+            {% for error in form.errors.city %}
+            <small class="text-danger">{{error}}</small>
+            {% endfor %}
+            </div>
+            <div class="form-group">
+            {{form.state.label}}
+            {{form.state(class='form-control')}}
+            {% for error in form.errors.state %}
+            <small class="text-danger">{{error}}</small>
+            {% endfor %}
+            </div>
+            <div class="form-group">
+            {{form.country.label}}
+            {{form.country(class='form-control')}}
+            {% for error in form.errors.country %}
+            <small class="text-danger">{{error}}</small>
+            {% endfor %}
+            </div>
+            <div class="form-group">
+            {{form.phone.label}}
+            {{form.phone(class='form-control')}}
+            {% for error in form.errors.phone %}
+            <small class="text-danger">{{error}}</small>
+            {% endfor %}
+            </div>
+            <div class="form-group">
+            {{form.revenue.label}}
+            {{form.revenue(class='form-control')}}
+            {% for error in form.errors.revenue %}
+            <small class="text-danger">{{error}}</small>
+            {% endfor %}
+            </div>
+            <div class="form-group">
+            {{form.notes.label}}
+            {{form.notes(class='form-control')}}
+            {% for error in form.errors.notes %}
+            <small class="text-danger">{{error}}</small>
+            {% endfor %}
+            </div>
+            {{form.submit(class='btn btn-primary')}}
+        </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
