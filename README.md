@@ -6,12 +6,13 @@ This is a webapp to create, read, update, and delete companies to and from a SQL
 * Make sure you have Python > 3.6 installed, and create a virtual environment in the directory:
 
 ```python3 -m venv /path/to/directory```
-* Install and run SQLite3, and create a DB using the following command:
 
-```.open /path/to/directory```
-* Run migrations to get the latest version of the DB schema:
+* Install dependencies in the virtual environment:
 
-```flask db upgrade```
+```pip3 install -r requirements.txt```
+
+* Install SQLite3
+
 * Run the app:
 
 ```flask run```
